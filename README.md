@@ -49,7 +49,7 @@ has_many :products
 | Column           | Type    | Options    |
 | ---------------- | ------- | ---------- |
 | product_name     | string  | null:false | 
-| description      | string  | null:false |
+| description      | text    | null:false |
 | company_id       | integer | null:false |
 | category_id      | integer | null:false |
 | flavour_id       | integer | null:false |
@@ -57,7 +57,6 @@ has_many :products
 | unicent_price_id | integer | null:false |
 
 ### Association
-belongs_to :user
 
 
 ## memoriesテーブル
