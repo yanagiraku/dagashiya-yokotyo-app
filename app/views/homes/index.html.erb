@@ -1,15 +1,18 @@
 <h1>ホーム画面</h1>
 
-<body class="top-page-body">
-  <div class="top-page-body2">
-    <ul class=top-page-list-right>
+<body class="home-index">
+  <div class="top-page-body">
+    <div class=top-page-list-right>
       <% if user_signed_in? %>
-        <li class="logout"><%= link_to'ログアウト', destroy_user_session_path, method: :delete %></li> 
-        <%# <li class="mypage"><%= link_to'マイページ', user_path(current_user.id) %></li> 
+        <div class="logout"><%= link_to'ログアウト', destroy_user_session_path, method: :delete %></div> 
+        <%# <li class="mypage"><%= link_to'マイページ', user_path(current_user.id) %></div> 
       <%else%>
-        <li class="login" ><%= link_to'ログイン', new_user_session_path %></li> 
-        <li class="sign-up" ><%= link_to'新規登録', new_user_registration_path %></li>
+        <div class="login" ><%= link_to'ログイン', new_user_session_path %></div> 
+        <div class="sign-up" ><%= link_to'新規登録', new_user_registration_path %></div>
       <%end%>
-    </ul>
+    </div>
+    <div class="top-page-body">
+      <div class="product-category-btn"><%= link_to'商品一覧', products_path %></div>
+    </div>
   </div>
 </body>

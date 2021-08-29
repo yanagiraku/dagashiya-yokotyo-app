@@ -1,0 +1,65 @@
+<body class="product-new">
+  <%= form_with model: @product, url: products_path, class: "product-main", local: true do |f| %>
+  <div class="product-lists">
+    <div class="img-upload">
+      <label class="img-text">商品画像</label>
+      <div class="click-upload">
+        <p>
+          クリックしてファイルをアップロード
+        </p>
+        <%= f.file_field :image, id: "product-image"%>
+      </div>
+    </div>
+
+      <div class='product-wrap'>
+        <label class="product-text">商品名</label>
+        <span class="indispensable">必須</span>
+      </div>
+      <%= f.text_area :product_name, class:"input-default", id:"product_name", placeholder:"例)キャベツ太郎" %>
+
+      <div class='product-wrap'>
+        <label class="product-text">会社名</label>
+        <span class="indispensable">必須</span>
+      </div>
+      <%= f.collection_select(:company_id, Company.all, :id, :name, {class:"select-box", id:"company"}) %>
+
+      <div class='product-wrap'>
+        <label class="product-text">商品説明</label>
+        <span class="indispensable">必須</span>
+      </div>
+      <%= f.text_area :description, class:"input-default", id:"description", placeholder:"例)青のりがかかったのコロンとした丸い形が芽キャベツみたい" %>
+
+      <div class='product-wrap'>
+        <label class="product-text">カテゴリー</label>
+        <span class="indispensable">必須</span>
+      </div>
+      <%= f.collection_select(:category_id, Category.all, :id, :name, {class:"select-box", id:"category"}) %>
+
+      <div class='product-wrap'>
+        <label class="product-text">味</label>
+        <span class="indispensable">必須</span>
+      </div>
+      <%= f.collection_select(:flavour_id, Flavour.all, :id, :name, {class:"select-box", id:"flavour"}) %>
+
+      <div class='product-wrap'>
+        <label class="product-text">パッケージタイプ</label>
+        <span class="indispensable">必須</span>
+      </div>
+      <%= f.collection_select(:package_type_id, PackageType.all, :id, :name, {class:"select-box", id:"package-type"}) %>
+
+      <div class='product-wrap'>
+        <label class="product-text">単価</label>
+        <span class="indispensable">必須</span>
+      </div>
+      <%= f.collection_select(:unicent_price_id, UnicentPrice.all, :id, :name, {class:"select-box", id:"unicent-price"}) %>
+      
+    </div>
+
+    <div class="product-entry">
+      <%= f.submit "登録する" ,class:"product-entry-btn" %>
+      <%=link_to 'もどる', root_path, class:"back-btn" %>
+    </div>
+  </div>
+
+  <%end%>
+</body>
