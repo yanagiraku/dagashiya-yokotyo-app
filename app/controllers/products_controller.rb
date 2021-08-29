@@ -1,5 +1,6 @@
 class ProductsController < ApplicationController
   def index
+    @product = Product.all
   end
 
   def new
@@ -14,6 +15,31 @@ class ProductsController < ApplicationController
       render :new
     end
   end
+
+  def snack
+    @product1 = Product.where(category_id:2)
+  end
+
+  def chocolate
+    @product2 = Product.where(category_id:3)
+  end
+
+  def candy
+    @product3 = Product.where(category_id:4)
+  end
+
+  def jello
+    @product4 = Product.where(category_id:5)
+  end
+
+  def pan
+    @product5 = Product.where(category_id:6)
+  end
+
+  def delicacy
+    @product6 = Product.where(category_id:7)
+  end
+
 
 
 

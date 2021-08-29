@@ -1,5 +1,14 @@
 Rails.application.routes.draw do
   devise_for :users
   root to:"homes#index"
-  resources :products, only: [:index, :new, :create]
+  resources :products do
+    collection do
+      get 'snack'
+      get 'chocolate'
+      get 'candy'
+      get 'jello'
+      get 'pan'
+      get 'delicacy'
+    end
+  end
 end
