@@ -2,6 +2,10 @@ class Product < ApplicationRecord
   has_one_attached :image
 
 
+  with_options presence: true do
+    validates :product_name
+    validates :description
+  end
 
   with_options numericality: { other_than: 1 } do
     validates :company_id
