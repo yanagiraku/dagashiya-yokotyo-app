@@ -33,6 +33,8 @@
         <h3 class="category-name">珍味</h3>
       <%end%>
     </div>
-    <div class="product-registration"><%=link_to "商品登録", new_product_path%></div>
+    <% if current_user&.admin? %>
+      <div class="product-registration"><%=link_to "商品登録", new_product_path%></div>
+    <%end%>
   </div>
 </body>

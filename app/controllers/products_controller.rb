@@ -1,5 +1,4 @@
 class ProductsController < ApplicationController
-  before_action :admin_check, only: [:new, :create, :edit, :destroy]
   before_action :set_product, only: [:edit, :update, :destroy]
 
   def index
@@ -78,11 +77,6 @@ class ProductsController < ApplicationController
     params.require(:product).permit(:image, :product_name, :company_id, :description, :category_id, :flavour_id, :package_type_id, :unicent_price_id)
   end
 
-  def admin_check
-    unless current_user&.admin?
-      redirect_to products_path
-    end
-  end
 
   def set_product
     @product = Product.find(params[:id])
