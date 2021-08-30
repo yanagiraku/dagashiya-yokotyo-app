@@ -1,0 +1,19 @@
+<body class="memory-index">
+  <% @memory.each do |memory| %>
+  <div class='memory-list'>
+    <%# <%= link_to memory_path(memory.id) do %>
+    <div class='memory-info1'>
+      <div class='memory-title'><%= memory.title %></div>
+      <div class='memory-created-on'><%= memory.created_on %></div>
+    </div>
+    <div class='index-user-info'>
+      <div class='user-nickname'><%= memory.user.nickname %></div>
+      <div class='user-age'><%= memory.user.age.name%></div>
+    </div>
+    <div class="memory-info2">
+      <div class="memory-memory"><%= memory.memory%></div>
+    </div>
+    <%# <%end %> 
+  </div>
+  <% end %>
+</body>

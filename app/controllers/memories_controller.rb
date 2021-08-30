@@ -1,5 +1,6 @@
 class MemoriesController < ApplicationController
   def index
+    @memory = Memory.all
   end
 
   def new
