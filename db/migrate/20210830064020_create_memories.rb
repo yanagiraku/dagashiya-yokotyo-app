@@ -4,6 +4,7 @@ class CreateMemories < ActiveRecord::Migration[6.0]
       t.string  :title
       t.text    :memory
       t.date    :created_on
+      t.references :user,       foreign_key: true
       t.timestamps
     end
   end

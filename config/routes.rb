@@ -11,5 +11,5 @@ Rails.application.routes.draw do
       get 'delicacy'
     end
   end
-  resources :memories 
+  resources :memories, only: [:index, :new, :create]
 end

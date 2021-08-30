@@ -1,0 +1,24 @@
+
+<h1>思い出投稿</h1>
+
+<body class="memory-new">
+  <%= form_with model: @memory, url: memories_path, class: "memory-main", local: true do |f| %>
+  <div class="memory-lists">
+    <div class='memory-wrap'>
+      <label class="memory-text">タイトル</label>
+    </div>
+    <%= f.text_area :title, class:"memory-input-default", id:"title" %>
+
+    <div class='product-wrap'>
+      <label class="product-text">思い出</label>
+    </div>
+    <%= f.text_area :memory, class:"memory-input-default", id:"memory" %>
+  <div>
+
+  <div class="memory-entry">
+    <%= f.submit "登録する" ,class:"memory-entry-btn" %>
+    <%=link_to 'もどる', root_path, class:"back-btn" %>
+  </div>
+  <%end%>
+
+</body>
