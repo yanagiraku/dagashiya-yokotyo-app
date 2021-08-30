@@ -16,6 +16,11 @@ class ProductsController < ApplicationController
     end
   end
 
+  def show
+    @product = Product.where(params[:id])
+    @product = Product.find(params[:id])
+  end
+
   def snack
     @product1 = Product.where(category_id:2)
   end
