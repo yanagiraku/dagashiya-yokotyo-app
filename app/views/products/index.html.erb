@@ -4,22 +4,34 @@
   </div>
   <div class="product-category">
     <div class="snack-lists">
-      <h3 class="category-name">スナック</h3>
+      <%= link_to snack_products_path, class:"product-snack-all" do%>
+        <h3 class="category-name">スナック</h3>
+      <%end%>
     </div>
     <div class="chocolate-lists">
-      <h3 class="category-name">チョコレート</h3>
+      <%= link_to chocolate_products_path, class:"product-chocolate-all" do%>
+        <h3 class="category-name">チョコレート</h3>
+      <%end%>
     </div>
     <div class="candy-lists">
-      <h3 class="category-name">飴・ラムネ・ガム</h3>
+      <%= link_to candy_products_path, class:"product-candy-all" do%>
+        <h3 class="category-name">飴・ラムネ・ガム</h3>
+      <%end%>
     </div>
     <div class="jello-lists">
-      <h3 class="category-name">ゼリー・グミ・ドリング</h3>
+      <%= link_to jello_products_path, class:"product-jello-all" do%>
+        <h3 class="category-name">ゼリー・グミ・ドリング</h3>
+      <%end%>
     </div>
     <div class="pan-lists">
-      <h3 class="category-name">パン・米・餅</h3>
+      <%= link_to pan_products_path, class:"product-pan-all" do%>
+        <h3 class="category-name">パン・米・餅</h3>
+      <%end%>
     </div>
     <div class="delicacy-lists">
-      <h3 class="category-name">珍味</h3>
+      <%= link_to delicacy_products_path, class:"product-delicacy-all" do%>
+        <h3 class="category-name">珍味</h3>
+      <%end%>
     </div>
     <div class="product-registration"><%=link_to "商品登録", new_product_path%></div>
   </div>
