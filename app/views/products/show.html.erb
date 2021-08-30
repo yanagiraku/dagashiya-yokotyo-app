@@ -1,11 +1,11 @@
 <body class="product-show">
   <div class="product-all">
-    <%# <ul class ="change-btn"> %>
-      <%# <% if current_user&.admin? %> 
-        <%# <li><%= link_to "編集", edit_product_path(@product.id), method: :get, class: "edit-btn"%><%#/li>  
-        <%# <li><%= link_to "削除", product_path(@product.id), method: :delete, class: "delete-btn"%><%#/li>  
-      <%# <%end%> 
-    <%# </ul> %>
+    <ul class ="change-btn">
+      <% if current_user&.admin? %>
+        <li><%= link_to "編集", edit_product_path(@product.id), method: :get, class: "edit-btn"%></li>  
+        <li><%= link_to "削除", product_path(@product.id), method: :delete, class: "delete-btn"%></li>  
+      <%end%>
+    </ul>
     <div class="product-box">
       <div class="product-name-box">
         <h1 class="show-product-name"><%= @product.product_name%></h1>
@@ -27,7 +27,7 @@
           <div class="detail-value3"><%= "　#{@product.unicent_price.name}　" %></div>
         </div>
       </div>
-      <%= link_to "　≪　#{@product.category.name}をもっと見る", :back,  class: "another-products"%>
+      <%= link_to "　≪　#{@product.category.name}をもっと見る", "/products/#{@product.category.nickname}", class: "another-products"%>
     </div>
     <%# <div class="review-box"> %>
       <%# <%= link_to image_tag("kutikomitoukou.png", class: "review-img-btn"), new_product_review_path(product_id: @product.id) %> %>
