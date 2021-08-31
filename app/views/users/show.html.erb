@@ -1,0 +1,42 @@
+
+
+<body class="user-show">
+  <div class="user-all">
+    <div class="user-detail">
+      <h2 class="head-message">
+        <%= "#{current_user.nickname}さんの情報"%>
+      </h2>
+      <div class="user-table">
+        <table class="page-main">
+          <tr>
+            <td class="table__col1">ニックネーム</td>
+            <td class="table__col2"><%=current_user.nickname%></td>
+          </tr>
+          <tr>
+            <td class="table__col3">メールアドレス</td>
+            <td class="table__col4"><%=current_user.email%></td>
+          </tr>
+          <tr>
+            <td class="table_col5">年齢</td>
+            <td class="table__col6"><%="#{current_user.age.name}"%></td>
+          </tr>
+        </table>
+      </div>
+      <div class="review-table">
+        <h2 class="head-message">
+          <%= "#{current_user.nickname}さんの口コミ一覧"%>
+        </h2>
+        <% @memory.each do |memory| %>
+          <div class="memory-lists">
+            <div class="user-memory-imfo">
+              <div class="user-memory-title"><%=memory.title%></div>
+              <div class="user-memory-created-day"><%=memory.created_on%></div>
+              <div class="user-memory-memory"> <%= memory.memory%></div>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</body>
+

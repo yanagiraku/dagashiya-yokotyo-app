@@ -5,7 +5,7 @@
     <div class=top-page-list-right>
       <% if user_signed_in? %>
         <div class="logout"><%= link_to'ログアウト', destroy_user_session_path, method: :delete %></div> 
-        <%# <li class="mypage"><%= link_to'マイページ', user_path(current_user.id) %></div> 
+        <div class="mypage"><%= link_to'マイページ', user_path(current_user.id)%></div> 
       <%else%>
         <div class="login" ><%= link_to'ログイン', new_user_session_path %></div> 
         <div class="sign-up" ><%= link_to'新規登録', new_user_registration_path %></div>
