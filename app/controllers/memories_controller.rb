@@ -16,6 +16,28 @@ class MemoriesController < ApplicationController
     end
   end
 
+  def edit
+    @memory = Memory.find(params[:id])
+  end
+
+  def update
+    @memory = Memory.find(params[:id])
+    if  @memory.update(memory_params)
+      redirect_to root_path
+    else
+      render :show
+    end
+  end
+
+  def destroy
+    @memory = Memory.find(params[:id])
+    if @memory.destroy
+      redirect_to root_path
+    else
+      render :show
+    end
+  end
+
   private
 
   def  memory_params
